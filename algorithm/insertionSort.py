@@ -22,9 +22,8 @@ def insertionSort(data):
 def main():
     arr = [1,5,3,2,8]
     result = insertionSort(arr)
+    print(result)
     
-    for line in result :
-        print(line)
 
 if __name__ == "__main__":
     main()
