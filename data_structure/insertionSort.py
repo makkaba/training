@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- 
 def insertionSort(data):
 
-    #모든 1부터 끝까지 모든 엘리먼트를 한번씩 기준으로 잡는다.
+    #1부터 끝까지 모든 엘리먼트를 한번씩 기준으로 잡는다.
     for i in range(1, len(data)):
         j = i-1
         temp = data[i]
@@ -19,10 +19,8 @@ def insertionSort(data):
 
 
 def main():
-
-    n = [1,5,3,2,8]
-
-    result = insertionSort(n)
+    arr = [1,5,3,2,8]
+    result = insertionSort(arr)
     
     for line in result :
         print(line)
