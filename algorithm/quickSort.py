@@ -21,7 +21,7 @@ def quickSort(data):
     #피봇을 제외한 배열을 보내야 함
     temp = data[:mid] + data[mid+1:]
     left, right = getSmallLargeNumbers(temp, pivot)
-    # right = getLargeNumbers(temp, pivot)
+    
 
     left = quickSort(left)
     right = quickSort(right)
