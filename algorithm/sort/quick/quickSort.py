@@ -1,4 +1,6 @@
+
 # -*- coding: utf-8 -*- 
+#recursive 들어간 퀵소트
 def getSmallLargeNumbers(data, pivot):
     left = []
     right = []

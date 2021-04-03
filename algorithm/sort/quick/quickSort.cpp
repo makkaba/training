@@ -1,3 +1,4 @@
+//recursive 안 들어간 퀵소트
 void quickSort(int arr[], int left, int right){
 
 	int i=left;

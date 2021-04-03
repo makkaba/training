@@ -1,26 +1,72 @@
-function solution(N) {
-    var answer = 0;
-    var lhs = [];
-    var arr = N.split("");
-    var even = 0;
+// var input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
+// console.log(input[0]);
+// 
+
+// Run by Node.js
+
+const readline = require("readline");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+T = 0;
+isFirst = true;
+arr = [];
+
+rl.on("line", function(line) {
+    if(isFirst){
+        T = line;
+        isFirst = false;
+        return;
+    }
+    var temp = line.split(' ');
+    arr.push(temp);
+    T--;
     
-    for(var i=0; i<arr.length; i++){
-        console.log(arr[i]);
-        if( -1 != lhs.indexOf(arr[i])){
-            //이미 존재한다면
-            console.log("exist");
-            even++;
-        }else{
-            //없다면 추가
-            console.log("not exist");
-            lhs.push(arr[i]);    
-        }
+    if(!isFirst && T==0){
+        rl.close();
     }
     
-    if(arr.length < 4 && lhs.indexOf('0') != -1 ){
-        return 0;
-    }
-    console.log("even", even);
-    answer = even*2 +1;
-    return answer;
+    
+}).on("close", function() {
+    
+    solution(arr);
+  process.exit();
+});
+
+function solution(arr){
+    console.log(arr);
 }
+
+/*
+function visible(a) {
+    var R  =  ''
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] == '\b') {  R -= 1; continue; }  
+        if (a[i] == '\u001b') {
+            while (a[i] != 'm' && i < a.length) i++
+            if (a[i] == undefined) break
+        }
+        else R += a[i]
+    }
+    return  R
+}
+
+function empty(a) {
+    a = visible(a)
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] != ' ') return false
+    }
+    return  true
+}
+
+var readline = require('readline')
+var rl = readline.createInterface({ input: process.stdin, output: process.stdout, terminal: false })
+
+rl.on('line', function(line) {
+    if (!empty(line)) console.log(line) 
+})
+
+
+*/
